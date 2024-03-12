@@ -27,13 +27,16 @@ export default function Signup() {
   await updateProfile(user, { displayName: userName });
     console.log(user, 'user');
   const usersCollection = collection(db,'users');
+  console.log("mukalk");
   await setDoc(doc(usersCollection, result.user.uid), {
     id: result.user.uid,
     userDisplay: userName,
     email: email,
     phone: phone
-  });
-  navigate('/login')
+  })
+  console.log("thazhey");
+
+  navigate('/login');
  } catch (error) {
     console.error('error', error);
     const errorCode = error.code;
